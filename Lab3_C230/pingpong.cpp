@@ -19,9 +19,42 @@ void ping() {
 		std::cout << "PING" << std::endl;
 		//Передаем ход "ПОНГУ"
 		turn = false;
+		//Уведомляем "ПОНГ"
 		cv.notify_one();
 	}
 }
 
 //Функция ПОНГ
-void pong();
+void pong() {
+	while (running)
+	{
+		std::unique_lock<std::mutex>lock(mtx);
+		//Ждем, по не наступит очередь "понга" или игра не остановится
+		cv.wait(lock, [] {return !turn || !running; });
+		if (!running)
+		{
+			break;
+		}
+		std::cout << "PONG" << std::endl;
+		//Передаем ход "ПОНГУ"
+		turn = true;
+		//Уведомляем "ПОНГ"
+		cv.notify_one();
+	}
+
+}
+
+//Функция для отслеживания нажатия клавиши
+void monitorInput() {
+	while (running)
+	{	
+		//Проверяем, была ли нажат клавиша
+		if (_kbhit())
+		{
+			//Устанавливаем флаг завершения
+			running = false;
+			//Устанавливаем все потоки
+			cv.notify_all();
+		}
+	}
+}
