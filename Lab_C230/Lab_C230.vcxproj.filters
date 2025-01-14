@@ -27,7 +27,7 @@
     <ClCompile Include="alphabet.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="printstringcpp.cpp">
+    <ClCompile Include="printstring.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="search.cpp">
@@ -36,8 +36,8 @@
     <ClCompile Include="add.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="moneycpp.cpp">
-      <Filter>Файлы заголовков</Filter>
+    <ClCompile Include="money.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

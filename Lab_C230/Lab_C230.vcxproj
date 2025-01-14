@@ -133,8 +133,8 @@
     <ClCompile Include="alphabet.cpp" />
     <ClCompile Include="beep.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="moneycpp.cpp" />
-    <ClCompile Include="printstringcpp.cpp" />
+    <ClCompile Include="money.cpp" />
+    <ClCompile Include="printstring.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="txt.cpp" />
   </ItemGroup>
